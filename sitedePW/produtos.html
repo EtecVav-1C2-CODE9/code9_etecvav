@@ -1,0 +1,174 @@
+ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delícias de Jundiaí • Sorveteria</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="style.css">
+
+ 
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" tabindex="0">
+
+
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="site remaster.html">Delícias de Jundiaí</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="site remaster.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+ 
+ 
+ 
+ 
+
+  <section id="produtos" class="py-5 bg-creme">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Destaques da Vitrine</h2>
+        <p class="text-muted">Use as setas para navegar pelos sabores do dia.</p>
+      </div>
+
+      <div id="carouselProdutos" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselProdutos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselProdutos" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselProdutos" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+
+        <div class="carousel-inner rounded-4 shadow">
+          <div class="carousel-item active">
+            <img src="sorvetecarrosel.jpeg" class="d-block w-100" alt="Taça de sorvete de morango">
+            <div class="carousel-caption text-start">
+              <h5 class="fw-bold">Sorvetes de Todos os tipos </h5>
+              <p>Preparados especialmente pra você.</p>
+              <a class="btn btn-sm btn-light" href="#cardapio">Adicionar ao pedido</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="milkshakecarrossel.jpg" class="d-block w-100" alt="Milkshake de chocolate">
+            <div class="carousel-caption">
+              <h5 class="fw-bold">Milkshake</h5>
+              <p>Chocolate belga e creme extra gelado São só alguns de nossos sabores.</p>
+              <a class="btn btn-sm btn-light" href="#cardapio">Quero esse</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="sundaescarrosel.webp" class="d-block w-100" alt="Picolés coloridos">
+            <div class="carousel-caption text-end">
+              <h5 class="fw-bold">Sundaes</h5>
+              <p>Opções frutadas e cremosas, perfeitas para o calor.</p>
+              <a class="btn btn-sm btn-light" href="#cardapio">Explorar sabores</a>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselProdutos" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselProdutos" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="cardapio" class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Cardápio</h2>
+        <p class="text-muted">Escolha seu tamanho, adicione cobertura e finalize o pedido.</p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="sorvetecarrosel.jpeg" class="card-img-top" alt="Bola de sorvete de baunilha">
+            <div class="card-body">
+              <h5 class="card-title">Sabores Clássicos</h5>
+              <p class="card-text text-muted">Baunilha, Chocolate, Morango, Napolitano, Flocos.</p>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge badge-sabor">Copo</span>
+                <span class="badge badge-sabor">Casquinha</span>
+                <span class="badge badge-sabor">Cascão</span>
+              </div>
+              <button class="btn btn-acao w-100">Adicionar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="sundaescarrosel.webp" class="card-img-top" alt="Sundae com calda e granulado">
+            <div class="card-body">
+              <h5 class="card-title">Sundaes</h5>
+              <p class="card-text text-muted">Calda de caramelo, chocolate, morango, amendoim, granulado.</p>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge badge-sabor">Clássico</span>
+                <span class="badge badge-sabor">Do Chef</span>
+                <span class="badge badge-sabor">Mega</span>
+              </div>
+              <button class="btn btn-acao w-100">Escolher</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="milkshakecarrossel.jpg" class="card-img-top" alt="Milkshake cor de rosa">
+            <div class="card-body">
+              <h5 class="card-title">Milkshakes</h5>
+              <p class="card-text text-muted">Ovomaltine, Cookies & Cream, Pistache, Açaí, Paçoca.</p>
+              <div class="d-flex flex-wrap gap-2 mb-3">
+                <span class="badge badge-sabor">300 ml</span>
+                <span class="badge badge-sabor">500 ml</span>
+                <span class="badge badge-sabor">700 ml</span>
+              </div>
+              <button class="btn btn-acao w-100">Montar shake</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <span>© <span id="ano"></span> Delícias de Jundiaí. Todos os direitos reservados Para Felipe Abreu, João Santana e Pedro Menezes - ETECVAV DS 1C2 </span>
+      <div class="d-flex gap-3">
+        <a class="link-light text-decoration-none" href="site remaster.html">Início</a>
+        <a class="link-light text-decoration-none" href="produtos.html">Produtos</a>
+        <a class="link-light text-decoration-none" href="cadastro.html">Cadastro</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>

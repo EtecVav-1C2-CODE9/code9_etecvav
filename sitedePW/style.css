@@ -1,0 +1,23 @@
+    :root{
+      /* Paleta suave inspirada em sorvete pistache/baunilha/framboesa */
+      --cor-primaria: #27856A;
+      --cor-secundaria: #F7F3E9;
+      --cor-acao: #F04F6A;
+      --cor-escura: #0f2d25;
+    }
+    body{ font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .navbar{ background: var(--cor-primaria) !important; }
+    .navbar .nav-link, .navbar-brand{ color: #fff !important; }
+    .navbar .nav-link.active{ font-weight: 700; text-decoration: underline; text-underline-offset: 6px; }
+    .hero{
+      background: linear-gradient(180deg, rgba(39,133,106,.9), rgba(39,133,106,.6)), url("https://images.unsplash.com/photo-1625873169399-5553ea3d7990?q=80&w=1600&auto=format&fit=crop");
+      background-size: cover; background-position: center; color: #fff;
+      padding: 7rem 0 5rem; margin-top: 56px; /* offset do navbar fixo */
+    }
+    .hero .btn{ background: var(--cor-acao); border: none; }
+    .section-title{ color: var(--cor-primaria); font-weight: 700; letter-spacing: .5px; }
+    .badge-sabor{ background: var(--cor-primaria); }
+    .btn-acao{ background: var(--cor-acao); border: none; }
+    .bg-creme{ background: var(--cor-secundaria); }
+    footer{ background: var(--cor-escura); color: #e8f5f1; }
+    .form-control:focus, .form-select:focus{ box-shadow: 0 0 0 .25rem rgba(240,79,106,.25); border-color: var(--cor-acao); }

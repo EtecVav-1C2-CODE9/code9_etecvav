@@ -1,0 +1,179 @@
+  <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delícias de Jundiaí • Sorveteria</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+ <link rel="stylesheet" type="text/css" href="style.css">
+
+ 
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" tabindex="0">
+
+
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="site remaster.html">Delícias de Jundiaí</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="site remaster.html">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="produtos.html">Produtos</a></li>
+          <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+  <section id="cadastro" class="py-5 bg-creme">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="text-center mb-4">
+            <h2 class="section-title">Cadastro</h2>
+            <p class="text-muted">Ganhe 10% na primeira compra ao se cadastrar 💚</p>
+          </div>
+
+          <form id="formCadastro" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="nome" class="form-label">Nome completo</label>
+                <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+                <div class="invalid-feedback">Informe seu nome.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" placeholder="voce@exemplo.com" required>
+                <div class="invalid-feedback">Informe um e-mail válido.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="telefone" placeholder="(11) 99999-9999" pattern="\(\d{2}\)\s?\d{4,5}-\d{4}" required>
+                <div class="form-text">Formato: (11) 91234-5678</div>
+                <div class="invalid-feedback">Informe um telefone válido.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="senha" minlength="6" required>
+                <div class="form-text">Mínimo de 6 caracteres.</div>
+                <div class="invalid-feedback">Crie uma senha válida.</div>
+              </div>
+              <div class="col-12">
+                <label for="preferencia" class="form-label">Preferência</label>
+                <select id="preferencia" class="form-select" required>
+                  <option value="" selected disabled>Selecione</option>
+                  <option>Sorvetes</option>
+                  <option>Milkshakes</option>
+                  <option>Sundaes</option>
+                  <option>Picolés</option>
+                </select>
+                <div class="invalid-feedback">Escolha uma opção.</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="termos" required>
+                  <label class="form-check-label" for="termos">Aceito receber promoções no meu e-mail.</label>
+                  <div class="invalid-feedback">Você precisa aceitar para continuar.</div>
+                </div>
+              </div>
+            </div>
+            <div class="d-grid d-md-flex gap-3 mt-4">
+              <button class="btn btn-acao px-4" type="submit">Criar conta</button>
+              <button class="btn btn-outline-secondary px-4" type="reset">Limpar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="contato" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="section-title mb-3">Fale com a gente</h2>
+          <p class="text-muted">Endereço fictício: Rua das Delícias, 123 – Centro, Jundiaí/SP</p>
+          <ul class="list-unstyled">
+            <li>WhatsApp: (11) 90000-0000</li>
+            <li>E-mail: contato@deliciasdejundiai.com</li>
+            <li>Horário: Ter–Dom, 12h às 22h</li>
+          </ul>
+          <a class="btn btn-acao" href="#cadastro">Quero meu desconto</a>
+        </div>
+        <div class="col-lg-6">
+          <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-sm">
+            <iframe title="Mapa Jundiaí" src="https://www.openstreetmap.org/export/embed.html?bbox=-46.900%2C-23.200%2C-46.800%2C-23.100&layer=mapnik" loading="lazy" style="border:0;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+
+  
+
+ 
+    (function () {
+      'use strict'
+      const form = document.getElementById('formCadastro');
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault();
+         
+          const nome = document.getElementById('nome').value || 'Cliente';
+          const msg = `Cadastro enviado! Bem-vindo(a), ${nome} 💚`;
+          const alerta = document.createElement('div');
+          alerta.className = 'alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3 shadow';
+          alerta.role = 'alert';
+          alerta.textContent = msg;
+          document.body.appendChild(alerta);
+          setTimeout(() => alerta.remove(), 3500);
+          form.reset();
+          form.classList.remove('was-validated');
+          return;
+        }
+        form.classList.add('was-validated');
+      }, false)
+    })();
+  </script>
+
+
+
+  <footer class="py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <span>© <span id="ano"></span> Delícias de Jundiaí. Todos os direitos reservados Para Felipe Abreu, João Santana e Pedro Menezes - ETECVAV DS 1C2 </span>
+      <div class="d-flex gap-3">
+        <a class="link-light text-decoration-none" href="site remaster.html">Início</a>
+        <a class="link-light text-decoration-none" href="produtos.html">Produtos</a>
+        <a class="link-light text-decoration-none" href="cadastro.html">Cadastro</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body>
+</html>
