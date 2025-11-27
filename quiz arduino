@@ -1,0 +1,164 @@
+import random
+
+# ============================
+#   BANCO DE PERGUNTAS (70)
+# ============================
+
+perguntas = [
+    # --- PERGUNTAS ORIGINAIS ---
+    {"pergunta": "Qual país originou o projeto Arduino?", "alternativas": ["Estados Unidos", "Alemanha", "Itália", "China", "Brasil"], "correta": "Itália"},
+    {"pergunta": "Quem foi um dos criadores principais do Arduino?", "alternativas": ["Bill Gates", "Massimo Banzi", "Elon Musk", "Mark Zuckerberg", "Steve Jobs"], "correta": "Massimo Banzi"},
+    {"pergunta": "Qual placa é a mais popular para iniciantes?", "alternativas": ["Arduino Nano", "Arduino Mega", "Arduino Uno", "Arduino Mini", "ESP32"], "correta": "Arduino Uno"},
+    {"pergunta": "Qual porta é usada para comunicação serial via cabo?", "alternativas": ["GPIO", "PWM", "USB", "Vin", "Reset"], "correta": "USB"},
+    {"pergunta": "O que significa a sigla PWM?", "alternativas": ["Pulsos Modulados por Frequência", "Potência Máxima de Watts", "Modulação por Largura de Pulso", "Protocolo Mundial de Máquinas", "Pulso Mínimo de Watt"], "correta": "Modulação por Largura de Pulso"},
+    {"pergunta": "Onde ficam as instruções que só executam uma vez?", "alternativas": ["setup()", "start()", "main()", "loop()", "code()"], "correta": "setup()"},
+    {"pergunta": "Qual função executa repetidamente no Arduino?", "alternativas": ["start()", "setup()", "loop()", "repeat()", "execute()"], "correta": "loop()"},
+    {"pergunta": "Quantos bits possuem as portas analógicas do Arduino Uno?", "alternativas": ["4 bits", "8 bits", "10 bits", "12 bits", "16 bits"], "correta": "10 bits"},
+    {"pergunta": "Qual componente pode medir luminosidade?", "alternativas": ["LED", "LDR", "Buzzer", "Motor DC", "Botão"], "correta": "LDR"},
+    {"pergunta": "Qual protocolo permite comunicação com displays LCD 16x2 (I2C)?", "alternativas": ["HDMI", "SPI", "I2C", "USB", "Wi-Fi"], "correta": "I2C"},
+    {"pergunta": "Qual sensor detecta distância usando ultrassom?", "alternativas": ["DHT11", "HC-SR04", "LDR", "Acelerômetro", "BMP180"], "correta": "HC-SR04"},
+    {"pergunta": "Qual módulo permite comunicação Bluetooth?", "alternativas": ["ESP8266", "HC-05", "A4988", "NRF24L01", "ENC28J60"], "correta": "HC-05"},
+    {"pergunta": "Qual componente emite sons simples?", "alternativas": ["Servo Motor", "Buzzer", "LDR", "LCD", "Potenciômetro"], "correta": "Buzzer"},
+    {"pergunta": "Qual placa possui maior quantidade de portas GPIO?", "alternativas": ["Arduino Uno", "Arduino Nano", "Arduino Leonardo", "Arduino Mega", "ESP32"], "correta": "Arduino Mega"},
+    {"pergunta": "O que o comando pinMode faz?", "alternativas": ["Envia dados", "Define se um pino é entrada ou saída", "Lê valores digitais", "Controla sensores", "Compila o programa"], "correta": "Define se um pino é entrada ou saída"},
+    {"pergunta": "Qual comando escreve um valor digital (HIGH ou LOW)?", "alternativas": ["analogWrite()", "digitalWrite()", "serialPrint()", "pinMode()", "digitalRead()"], "correta": "digitalWrite()"},
+    {"pergunta": "Qual a tensão padrão de operação lógica do Arduino Uno?", "alternativas": ["1.5V", "3.3V", "5V", "9V", "12V"], "correta": "5V"},
+    {"pergunta": "Qual componente converte movimento mecânico em eletricidade?", "alternativas": ["Motor DC", "Sensor de fim de curso", "Servo Motor", "Gerador", "Relé"], "correta": "Gerador"},
+    {"pergunta": "Qual shield pode conectar o Arduino à internet via cabo?", "alternativas": ["Motor Shield", "Ethernet Shield", "LCD Shield", "JoyShield", "Relay Shield"], "correta": "Ethernet Shield"},
+    {"pergunta": "Qual biblioteca nativa controla servo motores?", "alternativas": ["LiquidCrystal", "Servo", "Wire", "SPI", "SoftwareSerial"], "correta": "Servo"},
+
+    # --- 50 PERGUNTAS ADICIONAIS ---
+    {"pergunta": "Qual a função do resistor em um circuito com LED?", "alternativas": ["Aumentar a corrente", "Limitar a corrente", "Gerar luz", "Armazenar energia", "Resfriar o LED"], "correta": "Limitar a corrente"},
+    {"pergunta": "O que significa GND?", "alternativas": ["Grande", "Ganho", "Ground (Terra)", "Geral", "Gerador"], "correta": "Ground (Terra)"},
+    {"pergunta": "Qual destes é um sensor de temperatura e umidade?", "alternativas": ["HC-05", "DHT11", "L298N", "SG90", "NE555"], "correta": "DHT11"},
+    {"pergunta": "Para ler um potenciômetro, qual função usamos?", "alternativas": ["digitalRead()", "analogRead()", "digitalWrite()", "Serial.read()", "pinMode()"], "correta": "analogRead()"},
+    {"pergunta": "Qual o valor máximo retornado por analogRead() no Uno?", "alternativas": ["255", "512", "1023", "1024", "4096"], "correta": "1023"},
+    {"pergunta": "Qual o valor máximo aceito por analogWrite() (PWM) no Uno?", "alternativas": ["127", "255", "512", "1023", "100"], "correta": "255"},
+    {"pergunta": "O que o comando delay(1000) faz?", "alternativas": ["Pausa por 1 ms", "Pausa por 100 ms", "Pausa por 1 segundo", "Reinicia o Arduino", "Pula 1000 linhas"], "correta": "Pausa por 1 segundo"},
+    {"pergunta": "Qual componente permite controlar altas cargas AC com Arduino?", "alternativas": ["Resistor", "Capacitor", "Relé", "LED", "Botão"], "correta": "Relé"},
+    {"pergunta": "Qual a função do comando Serial.begin(9600)?", "alternativas": ["Ligar o LED", "Iniciar comunicação serial", "Ler sensor", "Mover motor", "Salvar memória"], "correta": "Iniciar comunicação serial"},
+    {"pergunta": "O que é um Sketch no contexto do Arduino?", "alternativas": ["O hardware", "O cabo USB", "O programa (código)", "O sensor", "A bateria"], "correta": "O programa (código)"},
+    {"pergunta": "Qual destes pinos suporta PWM no Arduino Uno?", "alternativas": ["2", "4", "6", "7", "A0"], "correta": "6"}, # Nota: 3, 5, 6, 9, 10, 11 são PWM
+    {"pergunta": "Qual a linguagem baseada usada no Arduino IDE?", "alternativas": ["Python", "Java", "C++", "HTML", "Ruby"], "correta": "C++"},
+    {"pergunta": "Qual chip é o microcontrolador principal do Arduino Uno R3?", "alternativas": ["ATmega328P", "ESP8266", "ATtiny85", "STM32", "PIC16F"], "correta": "ATmega328P"},
+    {"pergunta": "O que acontece se ligarmos um LED invertido?", "alternativas": ["Explode", "Acende azul", "Não acende", "Pisca", "Esquenta muito"], "correta": "Não acende"},
+    {"pergunta": "Qual destes componentes tem polaridade (lado positivo e negativo)?", "alternativas": ["Resistor", "Capacitor Eletrolítico", "Fio Jumper", "LDR", "Interruptor"], "correta": "Capacitor Eletrolítico"},
+    {"pergunta": "O que é um 'Breadboard'?", "alternativas": ["Uma placa de pão", "Placa de prototipagem", "Um tipo de Arduino", "Um sensor de comida", "Uma bateria"], "correta": "Placa de prototipagem"},
+    {"pergunta": "Qual driver é comum para controlar motores DC?", "alternativas": ["L298N", "DHT11", "HC-06", "DS3231", "MPU6050"], "correta": "L298N"},
+    {"pergunta": "O pino A0 pode ser usado como saída digital?", "alternativas": ["Sim", "Não", "Só com shield", "Só no Mega", "Nunca"], "correta": "Sim"},
+    {"pergunta": "Qual função retorna o tempo desde que o Arduino ligou?", "alternativas": ["time()", "clock()", "millis()", "delay()", "watch()"], "correta": "millis()"},
+    {"pergunta": "O que significa IDE?", "alternativas": ["Interface de Dados Externa", "Ambiente de Desenvolvimento Integrado", "Índice de Densidade Elétrica", "Inteligência de Dispositivos", "Input de Dados"], "correta": "Ambiente de Desenvolvimento Integrado"},
+    {"pergunta": "Qual destes é um sensor de movimento infravermelho passivo?", "alternativas": ["PIR", "Ultrassônico", "LDR", "Termistor", "Piezo"], "correta": "PIR"},
+    {"pergunta": "Qual destes NÃO é um tipo de variável no Arduino?", "alternativas": ["int", "float", "char", "string", "tabela"], "correta": "tabela"},
+    {"pergunta": "Como se comenta uma única linha no código?", "alternativas": ["/* */", "//", "#", "", "--"], "correta": "//"},
+    {"pergunta": "Qual o operador lógico para 'OU' (OR)?", "alternativas": ["&&", "||", "!", "OR", "&"], "correta": "||"},
+    {"pergunta": "Qual o operador lógico para 'E' (AND)?", "alternativas": ["&&", "||", "!", "AND", "*"], "correta": "&&"},
+    {"pergunta": "Qual sensor mede aceleração e giroscópio?", "alternativas": ["MPU6050", "HC-SR04", "LM35", "Relé", "LED RGB"], "correta": "MPU6050"},
+    {"pergunta": "Qual a tensão do pino Vin recomendada (entrada externa)?", "alternativas": ["1V-2V", "3V-4V", "7V-12V", "20V-30V", "110V"], "correta": "7V-12V"},
+    {"pergunta": "O que é um LED RGB?", "alternativas": ["Led que Roda, Gira e Bate", "Led Red Green Blue", "Led Resistente Grande e Branco", "Led Radioativo", "Sensor de cor"], "correta": "Led Red Green Blue"},
+    {"pergunta": "Para usar o monitor serial, o Arduino precisa estar...", "alternativas": ["Desligado", "Conectado ao PC", "Sem código", "Na internet", "Com bateria 9V"], "correta": "Conectado ao PC"},
+    {"pergunta": "Qual a capacidade de memória Flash do Uno (aprox)?", "alternativas": ["32 KB", "1 GB", "500 MB", "1 TB", "2 KB"], "correta": "32 KB"},
+    {"pergunta": "O que o botão Reset faz?", "alternativas": ["Apaga o código", "Reinicia a execução do código", "Queima a placa", "Desliga a placa", "Entra no modo Wi-Fi"], "correta": "Reinicia a execução do código"},
+    {"pergunta": "Qual destes é um display gráfico comum?", "alternativas": ["OLED 0.96", "LED 5mm", "LDR", "Buzzer Ativo", "Resistor"], "correta": "OLED 0.96"},
+    {"pergunta": "O que é 'debounce'?", "alternativas": ["Um tipo de código", "Tratamento de ruído em botões", "Uma placa", "Um erro", "Um cabo"], "correta": "Tratamento de ruído em botões"},
+    {"pergunta": "Qual biblioteca é usada para o display LCD 16x2?", "alternativas": ["LiquidCrystal", "SolidState", "ScreenView", "MonitorLib", "Pixel"], "correta": "LiquidCrystal"},
+    {"pergunta": "O que significa SPI?", "alternativas": ["Serial Peripheral Interface", "Sound Port Input", "System Power Indicator", "Sensor Pin In", "Serial Port Internet"], "correta": "Serial Peripheral Interface"},
+    {"pergunta": "Quantas portas digitais o Arduino Uno possui (0-13)?", "alternativas": ["10", "12", "14", "20", "8"], "correta": "14"},
+    {"pergunta": "Para salvar dados mesmo sem energia, usamos a memória...", "alternativas": ["RAM", "EEPROM", "SRAM", "Cache", "Buffer"], "correta": "EEPROM"},
+    {"pergunta": "Qual sensor detecta gás e fumaça?", "alternativas": ["MQ-2", "HC-SR04", "DHT11", "IR", "Bluetooth"], "correta": "MQ-2"},
+    {"pergunta": "O que é um Servomotor?", "alternativas": ["Motor de rotação contínua livre", "Motor com controle preciso de posição", "Motor de vibração", "Gerador de energia", "Ventoinha"], "correta": "Motor com controle preciso de posição"},
+    {"pergunta": "Qual o símbolo de atribuição de valor em C++?", "alternativas": ["==", "=", ":", "<-", "=>"], "correta": "="},
+    {"pergunta": "Qual o símbolo de comparação de igualdade?", "alternativas": ["=", "==", "<>", "!=", "==="], "correta": "=="},
+    {"pergunta": "O comando 'for' é usado para...", "alternativas": ["Tomar decisão", "Loops/Repetição", "Definir pinos", "Comunicação", "Parar o código"], "correta": "Loops/Repetição"},
+    {"pergunta": "Qual destes NÃO é um Arduino oficial?", "alternativas": ["Arduino Uno", "Arduino Nano", "Arduino Leonardo", "Arduino Raspberry", "Arduino Micro"], "correta": "Arduino Raspberry"}, # Raspberry é outra marca
+    {"pergunta": "O pino 13 do Uno geralmente tem conectado um...", "alternativas": ["Motor", "LED integrado", "Botão", "Buzzer", "Sensor"], "correta": "LED integrado"},
+    {"pergunta": "Qual a corrente máxima recomendada por pino I/O?", "alternativas": ["1A", "500mA", "20mA", "100A", "5A"], "correta": "20mA"},
+    {"pergunta": "O que significa TX e RX?", "alternativas": ["Transmissão e Recepção", "Terra e Raios", "Tempo e Rotação", "Teste e Resultado", "Taxa e Resistência"], "correta": "Transmissão e Recepção"},
+    {"pergunta": "Qual sensor é usado para seguir linhas (robô seguidor)?", "alternativas": ["Sensor Infravermelho Reflexivo", "Sensor de Gás", "Sensor de Chuva", "Microfone", "Barômetro"], "correta": "Sensor Infravermelho Reflexivo"},
+    {"pergunta": "Para ler um botão, geralmente usamos um resistor de...", "alternativas": ["Pull-up ou Pull-down", "Carga", "Potência", "Aquecimento", "Indução"], "correta": "Pull-up ou Pull-down"},
+    {"pergunta": "O módulo RTC (DS3231) serve para...", "alternativas": ["Controlar Motores", "Contar Tempo (Relógio Real)", "Medir Temperatura", "Tocar Música", "Conectar Wi-Fi"], "correta": "Contar Tempo (Relógio Real)"},
+    {"pergunta": "Qual a extensão padrão de um arquivo Arduino?", "alternativas": [".txt", ".py", ".ino", ".cpp", ".exe"], "correta": ".ino"}
+]
+
+# ============================
+#   FUNÇÕES DO PROGRAMA
+# ============================
+
+def mostrar_menu():
+    print("\n=== QUIZ SOBRE ARDUINO ===")
+    print("1 - Responder Quiz")
+    print("2 - Exibir Regras")
+    print("3 - Encerrar Programa")
+
+
+def mostrar_regras():
+    print("\n=== REGRAS DO JOGO ===")
+    print("- 20 questões serão sorteadas aleatoriamente.")
+    print("- Cada questão vale 0,5 pontos.")
+    print("- Nota máxima: 10 pontos.")
+    print("- Alternativas são embaralhadas.")
+    print("- Digite apenas a letra correspondente à resposta (A–E).")
+
+
+def sortear_questoes():
+    return random.sample(perguntas, 20)
+
+
+def exibir_questao(q, numero):
+    print(f"\nQuestão {numero}: {q['pergunta']}")
+    alternativas = q["alternativas"][:]
+    random.shuffle(alternativas)
+
+    letras = ["A", "B", "C", "D", "E"]
+    mapa = {}
+
+    for i, alt in enumerate(alternativas):
+        mapa[letras[i]] = alt
+        print(f"{letras[i]}) {alt}")
+
+    return mapa
+
+
+def verificar_resposta(mapa, resposta, correta):
+    if resposta in mapa and mapa[resposta] == correta:
+        return 0.5
+    return 0
+
+
+def exibir_resultado(pontos):
+    print(f"\n=== RESULTADO FINAL ===")
+    print(f"Pontuação obtida: {pontos:.1f} / 10.0")
+
+
+# ============================
+#   PROGRAMA PRINCIPAL
+# ============================
+
+while True:
+    mostrar_menu()
+    opcao = input("Escolha: ")
+
+    if opcao == "1":
+        score = 0
+        sorteadas = sortear_questoes()
+
+        for i, q in enumerate(sorteadas, 1):
+            mapa = exibir_questao(q, i)
+            resposta = input("Sua resposta: ").upper()
+
+            while resposta not in ["A", "B", "C", "D", "E"]:
+                resposta = input("Inválido! Digite A–E: ").upper()
+
+            score += verificar_resposta(mapa, resposta, q["correta"])
+
+        exibir_resultado(score)
+
+    elif opcao == "2":
+        mostrar_regras()
+
+    elif opcao == "3":
+        print("Encerrando... Obrigado por jogar!")
+        break
+
+    else:
+        print("Opção inválida! Tente novamente.")
